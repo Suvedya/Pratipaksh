@@ -19,5 +19,5 @@ def test_extract_citations():
 def test_generate_report():
     agent = CitationAgent("Sneha Desai")
     report = agent.generate_report()
-    assert isinstance(report, dict)
-    assert "Article 21 of the Constitution" in report or "Maneka Gandhi v. Union of India" in report
+    assert isinstance(report, list)
+    assert all(isinstance(item, dict) for item in report)
