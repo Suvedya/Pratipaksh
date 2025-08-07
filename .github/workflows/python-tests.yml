@@ -24,6 +24,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: ⬇️ Download spaCy model
+        run: |
+          python -m spacy download en_core_web_sm
+
       - name: 🧪 Run tests
         run: |
           pytest tests/
